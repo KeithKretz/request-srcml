@@ -65,7 +65,7 @@ bool generate_srcml(const srcml_request& request) {
 	std::string filename = request_filename(request);
 	if (filename == "-")
 	{
-		std::cout << "stdin need declared language" << "\n";
+		std::cout << "Using stdin requires a declared language" << "\n";
 		return false;
 	}
 	std::string language = request_language(request, filename);

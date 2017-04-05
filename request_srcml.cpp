@@ -9,6 +9,7 @@
 
 // extracts the filename to use from the request
 std::string request_filename(const srcml_request& request) {
+	
     std::string filename;
     // TODO: determine the proper filename from the request
     if (request.option_filename != "") 

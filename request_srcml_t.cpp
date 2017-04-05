@@ -39,5 +39,11 @@ int main() {
     	assert(request_filename(request) == "mytest.cpp");
     	assert(request_language(request, "") == "");
     }
+            //test5 The language is based on the file extensions where the get_language_from_filename() is used
+    {
+    	srcml_request request = { "", "mytest.cpp", "mystring", ""};
+    	assert(request_filename(request) == "mytest.cpp");
+    	assert(request_language(request, "mytest.cpp") == "C++");
+    }
     return 0;
 }

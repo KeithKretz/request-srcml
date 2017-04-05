@@ -27,5 +27,11 @@ int main() {
     	assert(request_filename(request) == "mytest.cpp");
     	assert(request_language(request, "") == "");
     }
+            //test3 the entry_filename is a string “data” where it should use local_filename
+    {
+    	srcml_request request = { "", "mytest.cpp", "mystring", ""};
+    	assert(request_filename(request) == "mytest.cpp");
+    	assert(request_language(request, "") == "");
+    }
     return 0;
 }

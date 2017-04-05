@@ -29,7 +29,7 @@ int main() {
     }
             //test3 the entry_filename is a string “data” where it should use local_filename
     {
-    	srcml_request request = { "", "mytest.cpp", "mystring", ""};
+    	srcml_request request = { "", "mytest.cpp", "data", ""};
     	assert(request_filename(request) == "mytest.cpp");
     	assert(request_language(request, "") == "");
     }
@@ -41,13 +41,13 @@ int main() {
     }
             //test5 The language is based on the file extensions where the get_language_from_filename() is used
     {
-    	srcml_request request = { "", "mytest.cpp", "mystring", ""};
+    	srcml_request request = { "", "mytest.cpp", "data", ""};
     	assert(request_filename(request) == "mytest.cpp");
     	assert(request_language(request, "mytest.cpp") == "C++");
     }
             //test6 The language can be an option_language and this exceeds the language settings
     {
-    	srcml_request request = { "", "mytest.cpp", "mystring", "C++"};
+    	srcml_request request = { "", "mytest.cpp", "data", "C++"};
     	assert(request_filename(request) == "mytest.cpp");
     	assert(request_language(request, "mytest.cpp") == "C++");
     }

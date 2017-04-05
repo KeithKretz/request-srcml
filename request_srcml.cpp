@@ -14,14 +14,20 @@ std::string request_filename(const srcml_request& request) {
     if (request.option_filename != "") 
     {
   	filename = request.option_filename;
+	return filename;
     }
     else{
     if (request.entry_filename == "mystring")
     {
 	filename = request.local_filename;
+	return filename;
+    }
+    else if (request.local_filename != "" && request.entry_filename != ""){
+	filename = request.entry_filename;
+	return filename;
     }
     else{
-	filename = ""; 
+	filename = "";
     }
 
     return filename;

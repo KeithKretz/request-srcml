@@ -19,8 +19,14 @@ std::string request_filename(const srcml_request& request) {
 	return filename;
     }
     else{
-    if (request.entry_filename == "mystring")
+    if (request.entry_filename == "data")
     {
+
+	if (request.local_filename == "-")
+ 	{
+ 		filename = "";
+ 		return filename;
+ 	}
 	filename = request.local_filename;
 	return filename;
     }
@@ -55,9 +61,9 @@ std::string request_language(const srcml_request& request, const std::string& fi
 bool generate_srcml(const srcml_request& request) {
 
 	std::string filename = request_filename(request);
-	if (filename == "")
+	if (filename == "-")
 	{
-		std::cout << "Requires a declared filename" << "\n";
+		std::cout << "stdin need declared language" << "\n";
 		return false;
 	}
 	std::string language = request_language(request, filename);

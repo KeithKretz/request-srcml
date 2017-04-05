@@ -51,5 +51,11 @@ int main() {
     	assert(request_filename(request) == "mytest.cpp");
     	assert(request_language(request, "mytest.cpp") == "C++");
     }
+	    //test7 when the input is from stdin (i.e., standard input, e.g., std::cin). In this case, the option_filename and entry_filename must be used.
+    {
+    	srcml_request request = { "", "-", "data", ""};
+    	assert(request_filename(request) == "");
+    	assert(request_language(request, "") == "");
+    }
     return 0;
 }

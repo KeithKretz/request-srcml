@@ -33,5 +33,11 @@ int main() {
     	assert(request_filename(request) == "mytest.cpp");
     	assert(request_language(request, "") == "");
     }
+            //test4 where there is an option file the exceeds all other files
+    {
+    	srcml_request request = { "mytest.cpp", "file.zip", "file.cpp", ""};
+    	assert(request_filename(request) == "mytest.cpp");
+    	assert(request_language(request, "") == "");
+    }
     return 0;
 }

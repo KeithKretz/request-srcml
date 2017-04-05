@@ -46,6 +46,7 @@ std::string request_language(const srcml_request& request, const std::string& fi
     else{
 	language = request.option_language;
     }
+	
     return language;
 }
 

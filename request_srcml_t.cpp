@@ -45,5 +45,11 @@ int main() {
     	assert(request_filename(request) == "mytest.cpp");
     	assert(request_language(request, "mytest.cpp") == "C++");
     }
+            //test6 The language can be an option_language and this exceeds the language settings
+    {
+    	srcml_request request = { "", "mytest.cpp", "mystring", "C++"};
+    	assert(request_filename(request) == "mytest.cpp");
+    	assert(request_language(request, "mytest.cpp") == "C++");
+    }
     return 0;
 }

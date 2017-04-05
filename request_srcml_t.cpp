@@ -15,6 +15,12 @@ int main() {
     	assert(request_filename(request) == "");
     	assert(request_language(request, "") == "");
     }
-
+	//test1
+    {
+    	srcml_request request = { "mytest.cpp", "", "", ""};
+    	assert(request_filename(request) == "mytest.cpp");
+    	assert(request_language(request, "") == "");
+    }
+ 
     return 0;
 }

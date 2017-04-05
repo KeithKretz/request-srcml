@@ -71,7 +71,7 @@ bool generate_srcml(const srcml_request& request) {
 	std::string language = request_language(request, filename);
 	if (language == "")
 	{
-		std::cout << "language not found" << "\n";
+		std::cout << "Extension not supported" << "\n";
 		return false;
 	}
 	return true;
